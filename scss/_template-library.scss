@@ -1,0 +1,63 @@
+@use "variables" as *;
+
+.shop {
+  padding-top: 29px;
+  padding-bottom: 27px;
+}
+.shop h2 {
+  margin-bottom: 28px;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px 20px;
+}
+.product {
+  overflow: hidden;
+  border-radius: 25px;
+  background: #d2d2d2;
+}
+.product-image {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #eee;
+}
+.product-actions {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+.add-cart {
+  display: grid;
+  place-items: center;
+  width: 95px;
+  height: 65px;
+  padding: 12px;
+  color: $red;
+  background: #fff;
+  border: 0;
+  border-radius: 6px;
+}
+.add-cart {
+  svg {
+    width: 36px;
+    height: 36px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+.price {
+  min-width: 230px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  color: white;
+  background: $red;
+  font-size: 38px;
+  line-height: 1;
+  text-align: center;
+}

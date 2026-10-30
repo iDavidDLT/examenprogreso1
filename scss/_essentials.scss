@@ -1,0 +1,110 @@
+@use "variables" as *;
+
+.essentials {
+  background: $gray;
+  padding: 42px 0 40px;
+}
+.search {
+  display: flex;
+  width: 410px;
+  height: 57px;
+  border: 2px solid #9c9c9c;
+  border-radius: 40px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.search-placeholder {
+  flex: 1;
+  min-width: 0;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 16px;
+}
+.search-icon {
+  width: 58px;
+  display: grid;
+  place-items: center;
+  color: #303030;
+}
+.search {
+  svg {
+    width: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+  }
+}
+h1, h2 {
+  margin: 0;
+  font-weight: 600;
+}
+h1, .shop h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+.essentials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 300px);
+  gap: 20px;
+}
+.essential {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #bcbcbc;
+  container-type: inline-size;
+}
+.essential.tall {
+  grid-row: span 2;
+}
+.essential img, .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.essential::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(242, 47, 66, .58), rgba(0, 0, 0, .72));
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.essential-label {
+  position: absolute;
+  z-index: 1;
+  top: 10cqw;
+  left: 10cqw;
+  color: #fff;
+  font-size: min(60px, 16cqw);
+  font-weight: 700;
+  line-height: 1.2;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.essentials-bottom .essential-label {
+  top: 7.5cqw;
+  left: 7.5cqw;
+  font-size: min(60px, 13cqw);
+}
+.essential:hover::after, .essential:focus-visible::after, .essential:hover .essential-label, .essential:focus-visible .essential-label {
+  opacity: 1;
+}
+.essential:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+.essentials-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.essentials-bottom .essential {
+  height: 300px;
+}
